@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background: linear-gradient(
+      135deg,
+      #061826,
+      #0b3954,
+      #02111c
+    );
+  
+    font-family: 'Quicksand', sans-serif;
+  
+    color: white;
+  }
+  
+  main {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  h2 {
+    font-family: 'Cinzel', serif;
+  
+    font-size: 28px;
+  
+    margin-bottom: 30px;
+  
+    color: #d8f3ff;
+  }
+  
+  
+  /* FLASHCARD */
+  
+  .flashcard {
+    width: 360px;
+    height: 480px;
+  
+    perspective: 1000px;
+  }
+  
+  .cartao {
+    width: 100%;
+    height: 100%;
+  
+    position: relative;
+  
+    transform-style: preserve-3d;
+  
+    transition: transform 0.8s ease;
+  }
+  
+  
+  /* GIRAR O CARTÃO */
+  
+  .flashcard:hover .cartao {
+    transform: rotateY(180deg);
+  }
+  
+  
+  /* FRENTE E VERSO */
+  
+  .cartao-frente,
+  .cartao-verso {
+    width: 100%;
+    height: 100%;
+  
+    position: absolute;
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+    padding: 20px;
+  
+    border-radius: 20px;
+  
+    background: #e9f7fc;
+  
+    color: #06283d;
+  
+    box-shadow:
+      0 15px 35px rgba(0, 0, 0, 0.45);
+  
+    backface-visibility: hidden;
+  }
+  
+  
+  /* VERSO */
+  
+  .cartao-verso {
+    transform: rotateY(180deg);
+  
+    background: #c9edf7;
+  }
+  
+  
+  /* IMAGEM */
+  
+  .container-imagem {
+    width: 100%;
+    height: 280px;
+  
+    overflow: hidden;
+  
+    border-radius: 15px;
+  }
+  
+  .cartao-imagem {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+  
+    display: block;
+  }
+  
+  
+  /* TEXTO */
+  
+  p {
+    font-size: 18px;
+  
+    font-weight: 700;
+  
+    line-height: 1.5;
+  
+    padding: 10px;
+  }
+  
+  
+  /* CELULAR */
+  
+  @media (max-width: 500px) {
+  
+    main {
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 22px;
+    }
+  
+    .flashcard {
+      width: 300px;
+      height: 420px;
+    }
+  
+    .container-imagem {
+      height: 230px;
+    }
+  
+    p {
+      font-size: 16px;
+    }
+  }
+  
